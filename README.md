@@ -30,14 +30,20 @@ The repository includes `jobs.json` with fictional example records, loaded autom
 
 ## Service rules
 
-Both filters include only annual services with status Scheduled or In progress. Installations and completed jobs are excluded.
+Both filters include only annual services with status **Scheduled** or **In progress**. Installations and completed jobs are excluded.
 
-| Filter | Scheduled date |
+The **reference date** is the date used to decide whether a service is overdue or upcoming. In normal use, this is today’s date, taken from the computer.
+
+| Filter | Services included |
 | --- | --- |
-| Overdue | Before the reference date |
-| Upcoming | From the reference date through 30 days later, inclusive |
+| Overdue | Scheduled before today |
+| Upcoming | Scheduled today or within the next 30 days, including exactly 30 days from today |
 
-The menu uses the computer's current date. Tests use a fixed reference date for reproducible results. Dates must be entered as `YYYY-MM-DD` and represent valid calendar dates.
+For example, if today is **14 November**, services scheduled before 14 November are overdue. Services scheduled from **14 November through 14 December**, including both dates, are upcoming.
+
+Automated tests supply a fixed reference date instead of today so their expected results remain consistent whenever they run.
+
+Dates must be entered as `YYYY-MM-DD` and represent valid calendar dates.
 
 ## Tests
 
