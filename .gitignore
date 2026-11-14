@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local environments and settings
+.venv/
+venv/
+.conda/
+.env
+.env.*
+!.env.example
+.vscode/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
